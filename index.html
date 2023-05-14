@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family:sans-serif;
+            color: white;
+            background-color: #333;
+            display: grid;
+            grid-template-areas:  'h1 h2 h2' 'c1 c2 c2';
+            grid-template-columns: auto 1fr 1fr;
+            grid-template-rows: 3em 1fr;
+            justify-content: space-evenly;
+            grid-column-gap: 1em;
+            height: calc(100vh - 1.5em);
+            margin: 0 1em;
+        }
+
+        /* grid layout oder sowas */
+        #searchhint, #recent, #downloads {
+            overflow: auto;
+            border: 1px solid #666;
+            border-radius: 0.5em;
+            padding: 0.5em;
+            background: #00000070;
+            height: max-content;
+            max-height: calc(100vh - 5.5em);
+        }
+        
+        #searchhint { grid-area: c1; }
+        #recent     { grid-area: c2; }
+        #downloads  { grid-area: c3; }
+        
+        
+        #searchhint button {
+            margin-bottom: 1em;
+            display: block;
+            padding: 0.4em 1em;
+        }
+
+        h1 {
+            font-size:inherit;
+            margin: 0.5em;
+            padding: 0.5em;
+        }
+
+        #searchhint tt {
+            display: inline-block;
+            background: #00000070;
+            color: gold;
+            font-size: 12pt;
+            font-family: monospace;
+            padding: 0 0.4em;
+            border:1px dotted #666;
+            margin: 0.1em 0;
+            width:2em;
+            text-align:center;
+            margin-right:0.5em;
+            display: inline-block;
+        }
+
+        #searchhint img {
+            width: 1em;
+            height: 1em;
+            margin-right:0.5em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #searchhint span {
+            display: inline-block;
+            font-size: 0.9em;        
+        }
+
+        #searchhint hr {
+            border: none;
+            border-top: 1px dashed #666;
+            height: 0;
+            margin: 0.5em 0;
+        }
+
+        button {
+            color: white;
+            border: 1px solid #ff730040;
+            background-color: #ffffff04;
+            border-radius: 0.3em;
+            padding:0.2em;
+            margin: 0.2em;
+            display: block;
+            text-align: left;
+            cursor: pointer;
+        }
+        button:hover {
+            border-color: #ffaf00;
+            background-color: #ffffff20;
+        }
+
+
+        #recent button {
+            width: calc(100% - 0.5em);
+        }
+
+        button table {
+            width: 100%;
+        }
+
+        button td {
+            vertical-align: top;
+        }
+
+        button .time ,button .date {
+            color:#aaa;
+            font-size: 0.9em;
+            width: 11ex;
+        }
+        button .date {
+            font-size: 0.8em;
+            vertical-align: bottom;
+        }
+
+        button .url {
+            font-size:0.7em;
+            color:#999;
+        }
+
+        .nonexist {
+            color: red;
+        }
+
+    </style>
+    <title>New Tab</title>
+</head><body>
+
+    <h1 style="grid-area: h1">Search keywords</h1>
+    <div id="searchhint">
+        <div class="slink"><tt>*</tt><span>Bookmarks</span></div>
+        <div class="slink"><tt>^</tt><span>History</span></div>
+        <div class="slink"><tt>%</tt><span>Tabs</span></div>
+        <div class="slink"><tt>></tt><span>Actions</span></div>
+        <hr>
+        <!-- include current search engines and keyword-bookmarks -->
+    </div>
+
+    <h1 style="grid-area: h2">Recently closed tabs</h1>
+    <div id="recent"></div>
+
+    <!--h1 style="grid-area: h3">Recent Downloads</h1>
+    <div id="downloads"></div-->
+
+</body>
+<script src="script.js"></script>
+</html>
+
