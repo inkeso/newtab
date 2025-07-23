@@ -91,7 +91,7 @@ function getdownloads() {
                 let td1 = document.createElement("td");
                 td1.className = "time";
                 let dla = new Date(v.startTime);
-                td1.innerHTML = dla.toLocaleTimeString("de-DE");
+                td1.innerText = dla.toLocaleTimeString("de-DE");
                 tr1.appendChild(td1);
 
                 let td2 = document.createElement("td");
@@ -160,7 +160,7 @@ function recenttabs() {
                 let td1 = document.createElement("td");
                 td1.className = "time";
                 let dla = new Date(v.tab.lastAccessed);
-                td1.innerHTML = dla.toLocaleTimeString("de-DE");
+                td1.innerText = dla.toLocaleTimeString("de-DE");
                 tr1.appendChild(td1);
 
                 let td2 = document.createElement("td");
