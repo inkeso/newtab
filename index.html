@@ -131,6 +131,43 @@
             color: red;
         }
 
+        @media (prefers-color-scheme: light) {
+            body {
+                color: black;
+                background-color: #DDD;
+            }
+            #searchhint, #recent, #downloads {
+                border-color: #666;
+                background: #FFFFFF70;
+            }
+
+            #searchhint tt {
+                background: #FFFFFF70;
+                color: #053FC4;
+                border-color: #666;
+            }
+
+            #searchhint hr {
+                border-top-color: #666;
+            }
+
+            button {
+                color: black;
+                background-color: #00000004;
+            }
+
+            button:hover {
+                background-color: #00000020;
+            }
+
+            button .time ,button .date {
+                color:#444;
+            }
+
+            button .url {
+                color:#666;
+            }
+        }
     </style>
     <title>New Tab</title>
 </head><body>
